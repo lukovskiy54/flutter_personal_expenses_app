@@ -1,0 +1,54 @@
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
+
+import 'package:flutter/material.dart';
+import 'package:second_project/widgets/user_transaction.dart';
+
+
+
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter App',
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  
+  // String? titleInput;
+  // String? amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter App'),
+      ),
+      body: SingleChildScrollView(    
+              child: Column(
+                  //mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Container(
+                      width: double.infinity,
+                      child: Card(
+                        color: Colors.blue,
+                        child: Text("CHART"),
+                        elevation: 5,
+                      ),
+                    ),
+                    UserTransactions()
+                  ]),
+            ),
+          
+        );
+  }
+}
